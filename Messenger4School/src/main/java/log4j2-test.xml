@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration statues="trace">
+	<Appenders>
+		<Console name="Console" target="SYSTEM_OUT">
+ 			<PatternLayout pattern="%5p [%t] (%F:%L) - %m%n"/>
+		</Console>
+		<RollingFile name="FileRolling" filename="Messenger.log" filepattern="Messenger-%d{yyyy-mm-dd}-%i.log" immediateflush="false">
+			<SizeBasedTriggeringPolicy size="128 KB"/>
+			<PatternLayout pattern="%d %5p [%t] %c - %m%n"/>
+			<DefaultRolloverStrategy max="8"/>
+		</RollingFile>
+	</Appenders>
+	<Loggers>
+		<Root level="info">
+			<AppenderRef ref="Console"/>
+			<AppenderRef ref="FileRolling"/>
+		</Root>
+	</Loggers>
+	<Loggers>
+		<Logger name="com" level="trace" additivity="false">
+			<AppenderRef ref="Console"/>
+			<AppenderRef ref="FileRolling"/>
+		</Logger>
+	</Loggers>
+</Configuration>
