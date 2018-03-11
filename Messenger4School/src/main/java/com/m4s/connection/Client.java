@@ -6,7 +6,7 @@ import java.net.Socket;
 import org.apache.log4j.Logger;
 
 public class Client {
-	static final String SERVER_DEFAULT_IP = "192.168.1.75";
+	static final String SERVER_DEFAULT_IP = "127.0.0.1";
 	static final int SERVER_SIDE_PORT=8888;
 	static Logger logger = Logger.getLogger(Client.class);
 	public static void main(String[] args) {

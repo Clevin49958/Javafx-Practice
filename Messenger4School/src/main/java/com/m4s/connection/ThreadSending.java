@@ -23,11 +23,12 @@ public class ThreadSending extends Thread {
 		DataOutputStream dataOutputStream = new DataOutputStream(oStream);
 
 		try {
+			@SuppressWarnings("resource")
+			Scanner scanner = new Scanner(System.in);
 			while (true) {
-				@SuppressWarnings("resource")
-				Scanner scanner = new Scanner(System.in);
-				String msg = scanner.next();
+				String msg = scanner.nextLine();
 				dataOutputStream.writeUTF(msg);
+				System.out.println("got: " + msg);
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
