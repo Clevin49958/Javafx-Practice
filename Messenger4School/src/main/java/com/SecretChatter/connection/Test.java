@@ -1,4 +1,4 @@
-package com.m4s.connection;
+package com.SecretChatter.connection;
 
 
 public class Test {
